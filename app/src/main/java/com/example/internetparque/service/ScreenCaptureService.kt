@@ -64,6 +64,7 @@ class ScreenCaptureService : Service() {
         toastRunnable = object : Runnable {
             override fun run() {
                 Handler(mainLooper).post {
+                    Log.d(SCREEN_CAPTURE_SERVICE_LOG, "Ejecutando el toast")
                     Toast.makeText(applicationContext, "Servicio activo", Toast.LENGTH_SHORT).show()
                 }
                 handler.postDelayed(this, 10_000) // 10 segundos
