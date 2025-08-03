@@ -1,6 +1,7 @@
 package com.example.internetparque
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -12,10 +13,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.internetparque.ui.theme.InternetParqueTheme
+import com.example.internetparque.util.Constants.MAIN_ACTIVITY_LOG
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(MAIN_ACTIVITY_LOG,"Starting the application")
         enableEdgeToEdge()
         setContent {
             InternetParqueTheme {
@@ -27,6 +30,7 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+        Log.d(MAIN_ACTIVITY_LOG,"Content rendering completed!")
     }
 }
 
